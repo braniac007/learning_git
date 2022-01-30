@@ -1,0 +1,30 @@
+1. log
+
+
+
+remote
+fetch
+push
+pull
+rebase
+reset
+cherrypick
+revert
+
+git remote -v
+
+Deexit ::
+feature/[ticket_number]branchname
+bugfix/[ticket_number]branchname
+
+
+git commit -m "[ticket_number] your comment here"
+
+Neelesh ::
+Stash
+
+
+
+scenario
+1. made many changes and add only one file with comment "git add file name" now after commit want to remove all other edited fiel that have not been commited
+2. https://stackoverflow.com/questions/1709177/git-pull-a-certain-branch-from-github
