@@ -1,30 +1,110 @@
-1. log
+1. log : The git log command returns a list of all commits made in a repository.
+COMMAND : git log
+RESULT --
+commit 8d53998e26a54a313807c086719618b13acb836b (HEAD -> main, origin/main, origin/HEAD)
+Author: Ratnesh Kumar <ratnesh.kumar@wagento.com>
+Date:   Sun Jan 30 16:56:14 2022 +0530
+
+    testing log
+
+commit 6dc88fa9a4bc840209d504d0a801f3f81f7c62ae
+Author: braniac007 <braniac.007@gmail.com>
+Date:   Sun Jan 30 16:14:26 2022 +0530
+
+    Initial commit
+
+================================================================================================================================================================
+================================================================================================================================================================
+================================================================================================================================================================
+
+2. remote : The "remote" command helps you to manage connections to remote repositories.
+It allows you to show which remotes are currently connected, but also to add new connections or remove existing ones.
+COMMAND : git remote -v
+RESULT --
+origin	https://github.com/braniac007/learning_git.git (fetch)
+origin	https://github.com/braniac007/learning_git.git (push)
+
+================================================================================================================================================================
+================================================================================================================================================================
+================================================================================================================================================================
+
+3. fetch : You download changes to your local branch from origin through fetch. Fetch asks the remote repo for all commits that others have made but you don't have on your local repo. Fetch downloads these commits and adds them to the local repository.
+COMMAND : git fetch
+
+================================================================================================================================================================
+================================================================================================================================================================
+================================================================================================================================================================
+
+4. pull : Pull does a fetch and then a merge to add the downloaded commits into your local branch.
+COMMAND : git pull
+SCENARIO : I had up to date repository. Then I had deleted several files and this was mistake. I would like to get fresh repository back. I do "git pull origin master".
+And expect to get everything from server, but getting message that everything is up to date.
+SOLUTION : git reset --hard origin/master
+
+================================================================================================================================================================
+================================================================================================================================================================
+================================================================================================================================================================
+
+5. rebase : First, thefeature branch should be updated with dev using below command
+COMMAND : git rebase dev
+
+================================================================================================================================================================
+================================================================================================================================================================
+================================================================================================================================================================
+
+6. ls-files : This shows all the deleted files.
+COMMAND : git ls-files --deleted
+to restore deletd file 
+COMMAND : git checkout <deleted file name with complete path>
+
+================================================================================================================================================================
+================================================================================================================================================================
+================================================================================================================================================================
+
+7. reset :  When you want to revert the changes that you just made and go back to the files that you had. This technique is called "reset to HEAD" and it is quite a powerful tool for developers to use.
+- A - B - C (master)
+COMMAND : git reset --soft B
+HEAD now points to B, but the index still has the changes from C
+
+git reset --hard B
+HEAD and index both now points to B
+
+HEAD: HEAD is a pointer to the branch or commit that you last checked out, and which will be the parent of a new commit if you make it. 
+Index: The git "index" is where you place files you want commit to the git repository.The index is a staging area where the new commit is prepared. 
+
+================================================================================================================================================================
+================================================================================================================================================================
+================================================================================================================================================================
+
+8. Stash : Git stash saves the uncommitted changes locally, allowing you to make changes, switch branches, and perform other Git operations. 
+COMMAND : git stash
+git stash pop
+git stash list
+
+================================================================================================================================================================
+================================================================================================================================================================
+================================================================================================================================================================
+
+9. revert : This is the command we use when we want to take a previous commit and add it as a new commit, keeping the log intact
+COMMAND : git revert --no-edit <commit-hash>
+
+================================================================================================================================================================
+================================================================================================================================================================
+================================================================================================================================================================
+
+10. Cherrypick : Cherry picking in Git means to choose a commit from one branch and apply it onto another.
+COMMAND: git cherry-pick <commit-hash>
 
 
 
-remote
-fetch
-push
-pull
-rebase
-reset
-cherrypick
-revert
-
-git remote -v
-
-Deexit ::
 feature/[ticket_number]branchname
 bugfix/[ticket_number]branchname
-
-
 git commit -m "[ticket_number] your comment here"
 
-Neelesh ::
-Stash
+
 
 
 
 scenario
-1. made many changes and add only one file with comment "git add file name" now after commit want to remove all other edited fiel that have not been commited
+1. made many changes and add only one file with comment "git add file name" now after commit want to remove all other edited field that have not been commited
 2. https://stackoverflow.com/questions/1709177/git-pull-a-certain-branch-from-github
