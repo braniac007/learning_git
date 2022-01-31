@@ -1,5 +1,6 @@
 1. log : The git log command returns a list of all commits made in a repository.
 COMMAND : git log
+git log --graph --decorate --oneline
 RESULT --
 commit 8d53998e26a54a313807c086719618b13acb836b (HEAD -> main, origin/main, origin/HEAD)
 Author: Ratnesh Kumar <ratnesh.kumar@wagento.com>
